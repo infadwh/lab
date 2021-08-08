@@ -17,7 +17,7 @@ pipeline{
         stage('GiT Checkout'){
             steps{
                 script{
-                        git branch: 'dev', credentialsId: 'jenkins-infadwh', url: 'https://github.com/infadwh/lab.git'
+                        git branch: 'dev', credentialsId: 'jenkins-infadwh', url: 'https://github.com/infadwh/'
                         sh 'pwd'
                 }
             }
