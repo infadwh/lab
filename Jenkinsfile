@@ -8,7 +8,7 @@ pipeline {
     }
     stage("Init") {
       steps {
-          sh 'terraform init' 
+          sh 'C:\Users\mopalla\Downloads\terraform init' 
       }
     }
   }
