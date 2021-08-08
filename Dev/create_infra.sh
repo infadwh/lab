@@ -20,9 +20,8 @@ then
 	echo "########### $process ComputeEngine for $project in $env environment ###########"
 	cd ComputeEngine
 	#cp -rf ../provider.tf .
-	rm -rf .terraform
-	terraform init
-	terraform $action -auto-approve
+	 C:\Users\mopalla\Downloads\terraform.exe init
+	 C:\Users\mopalla\Downloads\terraform.exe $action -auto-approve
 	#terraform destroy -auto-approve
 	set -xe
 	echo "########## Compute Engine $process is complete ###########"
