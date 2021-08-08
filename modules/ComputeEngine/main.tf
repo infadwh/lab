@@ -1,26 +1,33 @@
 
+provider "google" {
+  credentials = file("playground-s-11-792d28f4-dc98cd20794b.json")
+  version     = "~> 3.0.0-beta.1"
+  project     = "playground-s-11-792d28f4"
+  region      = "US"
+}
 resource "google_compute_instance" "default" {
-  provider     = google-beta
-  project      = var.project_id
-  name         = var.vm_name
-  machine_type = var.machine_type
-  zone         = var.zone
+  name         = "test"
+  machine_type = "e2-micro"
+  zone         = "us-central1-a"
 
+  tags = ["foo", "bar"]
 
   boot_disk {
     initialize_params {
-      image = var.image 
+      image = "debian-cloud/debian-9"
+    }
+  }
+ 
+  network_interface {
+    network = "default"
+
+    access_config {
+      // Ephemeral IP
     }
   }
 
-  /*// Local SSD disk
-  scratch_disk {
-    interface = var.interface
-  }*/
-
-  network_interface {
-    network     = var.network
-    subnetwork =  var.sub_network
+  metadata = {
+    foo = "bar"
   }
 
 }
