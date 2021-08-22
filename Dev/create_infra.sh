@@ -19,10 +19,14 @@ then
 	cd ${WORKSPACE}/Dev
 	echo "########### $process ComputeEngine for $project in $env environment ###########"
 	cd ComputeEngine
-	#cp -rf ../provider.tf .
-	 C:\Users\mopalla\Downloads\terraform.exe init
-	 C:\Users\mopalla\Downloads\terraform.exe $action -auto-approve
+	rm -rf .terraform
+	terraform init
+	terraform workspace select $env || terraform workspace new $env
+	terraform workspace list
+	terraform refresh -var-file=variables.tfvars
+
+	terraform $action -var-file=variables.tfvars -auto-approve
 	#terraform destroy -auto-approve
 	set -xe
-	echo "########## Compute Engine $process is complete ###########"
+	echo "########## EC2 $process is complete ###########"
 fi
