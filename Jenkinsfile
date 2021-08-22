@@ -20,7 +20,7 @@ pipeline{
 					export WORKSPACE=${WORKSPACE}
 					cd Dev/
 					chmod +x create_infra.sh
-					./create_infra.sh
+					bash ./create_infra.sh
 				"""
 			}
         }
