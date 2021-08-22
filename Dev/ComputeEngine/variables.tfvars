@@ -1,0 +1,8 @@
+project_id             	= "still-kit-305717"
+vm_name 			    = "terraform-vm-01"
+machine_type	 		= "e2-micro"
+zone 					= "us-west2-a"
+image 					= "debian-cloud/debian-9"
+//interface 				= "SCSI"
+network 				= "usgcpconnpd1"
+sub_network             ="usgcpconnpd2"
