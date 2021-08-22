@@ -4,14 +4,7 @@ pipeline{
     tools {
         terraform 'terraform'
     }
-    environment {
-        env='dev'
-        GCP_DEFAULT_REGION='us-central-1'
-    }
-    options {
-    ansiColor('vga')
-    quietPeriod(30)
-    }    
+  
 	parameters {
 		booleanParam defaultValue: false, description: 'To deploy service(s) check in Create_Infra and a service parameter(s). Example: Create_Inra + Aurora', name: 'Create_Infra'
 		booleanParam defaultValue: false, description: 'This will deploy GCP Compute Engine', name: 'ComputeEngine'
