@@ -30,3 +30,14 @@ variable "interface" {
   description = "The disk interface to use for attaching this disk; either SCSI or NVME."
   type        = string
 }*/
+
+// required
+variable "network" {
+  description = "The name or self_link of the network to attach this interface to."
+  type        = string
+}
+
+variable "sub_network" {
+  description = "The name or self_link of the subnetwork to attach this interface to"
+  type        = string
+}
