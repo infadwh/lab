@@ -23,8 +23,6 @@ then
 	terraform init
 	terraform workspace select $env || terraform workspace new $env
 	terraform workspace list
-	terraform refresh -var-file=variables.tfvars
-
 	terraform $action -var-file=variables.tfvars -auto-approve
 	#terraform destroy -auto-approve
 	set -xe
