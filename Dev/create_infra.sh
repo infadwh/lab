@@ -19,11 +19,11 @@ then
 	cd ${WORKSPACE}/Dev
 	echo "########### $process ComputeEngine for $project in $env environment ###########"
 	cd ComputeEngine
-	rm -rf .terraform
-	terraform init
-	terraform workspace select $env || terraform workspace new $env
-	terraform workspace list
-	terraform $action -var-file=variables.tfvars -auto-approve
+	sudo rm -rf .terraform
+	sudo terraform init
+	sudo terraform workspace select $env || terraform workspace new $env
+	sudo terraform workspace list
+	sudo terraform $action -var-file=variables.tfvars -auto-approve
 	#terraform destroy -auto-approve
 	set -xe
 	echo "########## EC2 $process is complete ###########"
