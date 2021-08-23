@@ -1,5 +1,5 @@
 module "compute-instance" {
-	source       = "../../modules"
+	source       = "../../modules/ComputeEngine"
 	project_id   = var.project_id
 	vm_name 	 = var.vm_name
 	machine_type = var.machine_type
