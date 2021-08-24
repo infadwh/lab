@@ -28,6 +28,7 @@ pipeline{
 				sh """
 					export WORKSPACE=${WORKSPACE}
 					cd Dev/
+					whoami
 					chmod +x create_infra.sh
 					bash ./create_infra.sh
 				"""
